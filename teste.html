@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>ICS</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="website icon" type="png" href="logo.png">
+</head>
+
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    
+<body>
+
+<div class="navigation">
+    <ul>
+        <p class="nome_empresa">ICS - Integrated Corporative System</p>
+        <br/><br/>
+
+        <li class="list active">
+            <b></b>
+            <b></b>
+            <a href="#">
+                <span class="icon">
+                    <ion-icon name="home-outline"></ion-icon>
+                </span>
+                <span class="title">Página inicial</span>
+                <span class="tooltip">Página inicial</span>
+            </a>
+        </li>
+
+        <li class="list">
+            <b></b>
+            <b></b>
+            <a href="#">
+                <span class="icon">
+                    <ion-icon name="business-outline"></ion-icon>
+                </span>
+                <span class="title">Sobre</span>
+                <span class="tooltip">Sobre</span>
+            </a>
+        </li>
+
+        <li class="list">
+            <b></b>
+            <b></b>
+            <a href="#">
+                <span class="icon">
+                    <ion-icon name="bulb-outline"></ion-icon>
+                </span>
+                <span class="title">Funcionalidades</span>
+                <span class="tooltip">Funcionalidades</span>
+            </a>
+        </li>
+
+        <li class="list">
+            <b></b>
+            <b></b>
+            <a href="#">
+                <span class="icon">
+                    <ion-icon name="book-outline"></ion-icon>
+                </span>
+                <span class="title">Guia de utilização</span>
+                <span class="tooltip">Guia de utilização</span>
+            </a>
+        </li>
+
+        <li class="list">
+            <b></b>
+            <b></b>
+            <a href="#">
+                <span class="icon">
+                    <ion-icon name="images-outline"></ion-icon>
+                </span>
+                <span class="title">Portfolio</span>
+                <span class="tooltip">Portfolio</span>
+            </a>
+        </li>
+
+        <li class="list">
+            <b></b>
+            <b></b>
+            <a href="#">
+                <span class="icon">
+                    <ion-icon name="at-outline"></ion-icon>
+                </span>
+                <span class="title">Fale conosco</span>
+                <span class="tooltip">Fale conosco</span>
+            </a>
+        </li>
+    </ul>
+</div>
+
+<div class="toggle">
+    <ion-icon name="menu-outline" class="open"></ion-icon>
+    <ion-icon name="close-outline" class="close"></ion-icon>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript">
+    let menuToggle = document.querySelector('.toggle')
+    let Navigation = document.querySelector('.navigation')
+
+    menuToggle.onclick = function(){
+        menuToggle.classList.toggle('active')
+        Navigation.classList.toggle('active')
+    }
+
+    let list = document.querySelectorAll('.list');
+    for(let i = 0; i < list.length; i++){
+        list[i].onclick = function(){
+            let j = 0;
+            while (j < list.length){
+                list[j++].className = 'list'
+            }
+            list[i].className = 'list active';
+        }
+    }
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('.open').click(function(){
+            $('.nome_empresa').css('display', 'block');
+            $('.tooltip').css('display', 'none');
+        });
+        $('.close').click(function(){
+            $('.nome_empresa').css('display', 'none');
+            location.reload();
+        });
+    });
+</script>
+
+</body>
+</html>
